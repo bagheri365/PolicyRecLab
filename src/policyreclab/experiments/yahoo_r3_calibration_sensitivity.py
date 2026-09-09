@@ -44,6 +44,20 @@ class YahooR3CalibrationSummary:
     mean_ess_fraction: float
 
 
+@dataclass(frozen=True)
+class YahooR3CalibrationReliability:
+    calibration_fraction: float
+    mean_n_calibration: float
+    q05_naive_bayes_bias: float
+    median_naive_bayes_bias: float
+    q95_naive_bayes_bias: float
+    q90_abs_naive_bayes_bias: float
+    q95_abs_naive_bayes_bias: float
+    probability_abs_bias_le_0_01: float
+    probability_abs_bias_le_0_02: float
+    probability_bias_reduction_ge_0_98: float
+
+
 def run_yahoo_r3_calibration_sensitivity(
     observational: RatingTriples,
     randomized: RatingTriples,
@@ -126,3 +140,43 @@ def run_yahoo_r3_calibration_sensitivity(
         )
 
     return runs, summaries
+
+
+def summarize_yahoo_r3_calibration_reliability(
+    runs: Iterable[YahooR3CalibrationRun],
+) -> list[YahooR3CalibrationReliability]:
+    """Summarize empirical split-to-split reliability at each calibration budget.
+
+    Quantiles and probabilities are descriptive over the supplied randomized
+    splits. They are not confidence intervals for a population parameter.
+    """
+    run_values = list(runs)
+    if not run_values:
+        raise ValueError("at least one calibration run is required")
+
+    reliability: list[YahooR3CalibrationReliability] = []
+    for fraction in sorted({run.calibration_fraction for run in run_values}):
+        group = [run for run in run_values if run.calibration_fraction == fraction]
+        bias = np.asarray([run.naive_bayes_bias for run in group], dtype=float)
+        abs_bias = np.abs(bias)
+        reductions = np.asarray(
+            [run.naive_bayes_bias_reduction for run in group], dtype=float
+        )
+        n_cal = np.asarray([run.n_calibration for run in group], dtype=float)
+        reliability.append(
+            YahooR3CalibrationReliability(
+                calibration_fraction=fraction,
+                mean_n_calibration=float(np.mean(n_cal)),
+                q05_naive_bayes_bias=float(np.quantile(bias, 0.05)),
+                median_naive_bayes_bias=float(np.quantile(bias, 0.50)),
+                q95_naive_bayes_bias=float(np.quantile(bias, 0.95)),
+                q90_abs_naive_bayes_bias=float(np.quantile(abs_bias, 0.90)),
+                q95_abs_naive_bayes_bias=float(np.quantile(abs_bias, 0.95)),
+                probability_abs_bias_le_0_01=float(np.mean(abs_bias <= 0.01)),
+                probability_abs_bias_le_0_02=float(np.mean(abs_bias <= 0.02)),
+                probability_bias_reduction_ge_0_98=float(
+                    np.mean(reductions >= 0.98)
+                ),
+            )
+        )
+    return reliability
