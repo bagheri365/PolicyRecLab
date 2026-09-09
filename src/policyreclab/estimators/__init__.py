@@ -16,3 +16,5 @@ __all__ = [
     "estimate_ips",
     "estimate_snips",
 ]
+
+from .logged_action_ips import LoggedActionIPSEstimate, estimate_logged_action_ips

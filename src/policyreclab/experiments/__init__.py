@@ -18,6 +18,10 @@ from .exploration_tradeoff import (
 from .exposure_bias import ExposureBiasResult, run_exposure_bias_experiment
 from .feedback_loops import FeedbackLoopComparison, run_feedback_loop_comparison
 from .ips_validation import IPSValidationResult, run_ips_validation_experiment
+from .open_bandit_replication import (
+    OpenBanditReplicationResult,
+    run_bts_to_random_replication,
+)
 from .policy_selection import (
     PolicySelectionPoint,
     PolicySelectionStudy,
@@ -45,6 +49,7 @@ __all__ = [
     "ExposureBiasResult",
     "FeedbackLoopComparison",
     "IPSValidationResult",
+    "OpenBanditReplicationResult",
     "PolicySelectionPoint",
     "PolicySelectionStudy",
     "ReliabilitySystemStudy",
@@ -59,6 +64,7 @@ __all__ = [
     "run_exposure_bias_experiment",
     "run_feedback_loop_comparison",
     "run_ips_validation_experiment",
+    "run_bts_to_random_replication",
     "run_policy_selection_study",
     "run_reliability_system_study",
     "run_support_identification_experiment",
