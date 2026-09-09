@@ -16,6 +16,7 @@ from .exploration_tradeoff import (
     run_exploration_tradeoff_study,
 )
 from .exposure_bias import ExposureBiasResult, run_exposure_bias_experiment
+from .feedback_loops import FeedbackLoopComparison, run_feedback_loop_comparison
 from .ips_validation import IPSValidationResult, run_ips_validation_experiment
 from .policy_selection import (
     PolicySelectionPoint,
@@ -38,6 +39,7 @@ __all__ = [
     "ExplorationTradeoffPoint",
     "ExplorationTradeoffStudy",
     "ExposureBiasResult",
+    "FeedbackLoopComparison",
     "IPSValidationResult",
     "PolicySelectionPoint",
     "PolicySelectionStudy",
@@ -50,6 +52,7 @@ __all__ = [
     "run_estimator_tradeoff_study",
     "run_exploration_tradeoff_study",
     "run_exposure_bias_experiment",
+    "run_feedback_loop_comparison",
     "run_ips_validation_experiment",
     "run_policy_selection_study",
     "run_support_identification_experiment",
