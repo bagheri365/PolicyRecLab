@@ -9,9 +9,10 @@ issue is discovered.
 1. [`../README.md`](../README.md) — project overview and headline findings.
 2. [`DOCUMENTATION_INDEX.md`](DOCUMENTATION_INDEX.md) — map of the research record.
 3. [`FINAL_REPORT.md`](FINAL_REPORT.md) — final paper-style research narrative.
-4. `REPRODUCIBILITY.md` — reserved for the D3 fresh-clone and data-reproduction guide.
+4. [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) — fresh-clone and data-reproduction guide.
+5. [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) — final release audit.
 
-The final research report is complete in D2. The fresh-clone reproducibility guide remains a D3 task.
+The final research report and reproducibility guide are complete. D3 closes the documentation phase with a release checklist.
 
 ## Research progression
 
@@ -98,13 +99,12 @@ result. Its stable weights and high ESS did not imply successful debiasing.
 - simulator, OBD, Coat, and Yahoo evidence synthesized;
 - retained, rejected, and caveated results kept explicit.
 
-### D3 — reproducibility and release audit
+### D3 — reproducibility and release audit — complete
 
-- add `docs/REPRODUCIBILITY.md`;
-- document fresh-clone setup and experiment commands;
-- document external-data provenance and local-only raw-data rules;
-- audit package/version metadata and documentation links;
-- run the complete test suite and prepare the release checklist.
+- `docs/REPRODUCIBILITY.md` added;
+- fresh-clone setup and experiment commands documented;
+- external-data provenance and local-only raw-data rules documented;
+- `docs/RELEASE_CHECKLIST.md` added for the final metadata/link/test audit.
 
 ## Release-blocking gaps after D1
 

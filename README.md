@@ -119,7 +119,8 @@ The experimental program is frozen at **v1.3.7**.
 - [`docs/DOCUMENTATION_INDEX.md`](docs/DOCUMENTATION_INDEX.md) — milestone map
 - [`docs/DOCUMENTATION_AUDIT.md`](docs/DOCUMENTATION_AUDIT.md) — D1 audit
 - [`docs/v1_3_7_yahoo_r3_results_synthesis.md`](docs/v1_3_7_yahoo_r3_results_synthesis.md) — Yahoo synthesis
-- Fresh-clone reproducibility guide — planned for D3
+- [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) — fresh-clone and real-data reproduction guide
+- [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md) — final release audit
 
 New experiments are out of scope unless documentation or reproduction work
 reveals a correctness issue.
