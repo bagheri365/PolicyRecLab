@@ -45,3 +45,15 @@ empirical operating point for this benchmark, not a universal threshold.
 See [`docs/v1_3_7_yahoo_r3_results_synthesis.md`](docs/v1_3_7_yahoo_r3_results_synthesis.md)
 for the full retained interpretation and identification caveat.
 
+## Documentation and release status
+
+The experimental program is frozen at **v1.3.7**. PolicyRecLab is now in its
+documentation and reproducibility finishing phase.
+
+- [`docs/DOCUMENTATION_INDEX.md`](docs/DOCUMENTATION_INDEX.md) — research record and documentation map
+- [`docs/DOCUMENTATION_AUDIT.md`](docs/DOCUMENTATION_AUDIT.md) — D1 release-readiness audit
+- Final research report — planned for D2
+- Fresh-clone reproducibility guide — planned for D3
+
+New experiments are intentionally out of scope during this phase unless the
+documentation or reproduction audit exposes a correctness issue.
