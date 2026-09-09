@@ -11,21 +11,21 @@ Monte Carlo rollout converges to that value?
 For user/context vector `u_i`, item/action vector `v_a`, latent dimension `d`,
 and item intercept `b_a`,
 
-\[
+```math
 \mu(x_i,a)
 =
 \sigma\left(
-\frac{u_i^\top v_a}{\sqrt d}
+\frac{u_i^\top v_a}{\sqrt{d}}
 +
 b_a
-\right).
-\]
+\right)
+```
 
 Rewards are then sampled as
 
-\[
-R \sim \mathrm{Bernoulli}(\mu(x_i,a)).
-\]
+```math
+R \sim \mathrm{Bernoulli}(\mu(x_i,a))
+```
 
 The `sqrt(d)` scaling prevents logit variance from increasing mechanically with
 latent dimension.
@@ -34,9 +34,9 @@ latent dimension.
 
 Uniform over all actions:
 
-\[
-\pi(a \mid x)=\frac{1}{|A|}.
-\]
+```math
+\pi(a \mid x)=\frac{1}{|\mathcal{A}|}
+```
 
 ## Validation criterion
 

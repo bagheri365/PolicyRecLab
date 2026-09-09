@@ -6,20 +6,20 @@ Can we avoid unstable importance weights by modeling rewards directly?
 
 The direct method (DM) estimates the conditional reward surface
 
-\[
+```math
 \mu(x,a)=\mathbb E[R\mid X=x,A=a]
-\]
+```
 
 with a model \(\hat\mu(x,a)\), then evaluates the target policy as
 
-\[
+```math
 \hat V_{\mathrm{DM}}
 =
-\frac1N
+\frac{1}{N}
 \sum_i
 \sum_a
-\pi_e(a\mid x_i)\hat\mu(x_i,a).
-\]
+\pi_e(a\mid x_i)\hat\mu(x_i,a)
+```
 
 DM does not multiply observed rewards by inverse propensities. That can make it
 far less variable than IPS. Its vulnerability is different: it relies on the
@@ -80,11 +80,11 @@ For each branch it reports:
 
 The experiment is designed to expose an important failure mode:
 
-\[
+```math
 \text{low variance}
 \not\Rightarrow
-\text{accurate}.
-\]
+\text{accurate}
+```
 
 A misspecified reward model can produce estimates that are very stable across
 datasets while remaining systematically wrong.

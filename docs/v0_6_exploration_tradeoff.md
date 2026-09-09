@@ -17,13 +17,13 @@ The synthetic environment is fixed.
 The behavior policy is epsilon-greedy with respect to the simulator's oracle
 reward means:
 
-\[
+```math
 \pi_\epsilon(a\mid x)
 =
-(1-\epsilon)\mathbf 1\{a=a^*(x)\}
+(1-\epsilon)\mathbf{1}\{a=a^*(x)\}
 +
-\frac{\epsilon}{|\mathcal A|}.
-\]
+\frac{\epsilon}{|\mathcal A|}
+```
 
 The future evaluation target is the uniform policy.
 
@@ -39,9 +39,9 @@ production recommender knows the true reward function.
 For every exploration rate, v0.6 measures the behavior policy's exact
 finite-population value:
 
-\[
-V(\pi_b).
-\]
+```math
+V(\pi_b)
+```
 
 This is the immediate data-collection objective.
 
@@ -61,25 +61,25 @@ This is the future evaluability objective.
 
 For a non-greedy action under epsilon-greedy logging,
 
-\[
+```math
 \pi_b(a\mid x)
 =
-\frac{\epsilon}{|\mathcal A|}.
-\]
+\frac{\epsilon}{|\mathcal A|}
+```
 
 For the uniform future target,
 
-\[
+```math
 \pi_e(a\mid x)
 =
-\frac1{|\mathcal A|}.
-\]
+\frac{1}{|\mathcal A|}
+```
 
 Therefore its importance ratio is
 
-\[
-w=\frac1\epsilon.
-\]
+```math
+w=\frac{1}{\epsilon}
+```
 
 As epsilon falls, those target-relevant observations become rarer and more
 influential.
@@ -92,11 +92,11 @@ controlled environment.
 
 This experiment demonstrates a data-collection tradeoff:
 
-\[
+```math
 \text{immediate behavior reward}
 \quad\leftrightarrow\quad
-\text{future evaluability}.
-\]
+\text{future evaluability}
+```
 
 It does **not** establish a universal theorem that more exploration always
 improves every OPE problem, or that exploitation always improves online reward.
@@ -118,9 +118,9 @@ measured rather than treated as an implementation detail.
 
 All epsilon values in this milestone satisfy
 
-\[
-\epsilon > 0.
-\]
+```math
+\epsilon > 0
+```
 
 Thus the uniform target retains exact contextual support.
 

@@ -7,7 +7,7 @@ but actively determines the data that the next policy will learn from?
 
 The repeated loop is
 
-\[
+```math
 \pi_t
 \rightarrow
 \text{exposure under }\pi_t
@@ -16,8 +16,8 @@ The repeated loop is
 \rightarrow
 \text{learner}
 \rightarrow
-\pi_{t+1}.
-\]
+\pi_{t+1}
+```
 
 This is the first PolicyRecLab milestone in which policy-generated exposure
 changes the data-generating process for future policies.
@@ -64,9 +64,9 @@ The last quantity is a direct future-evaluability diagnostic.
 
 For epsilon-greedy policies over \(K\) actions, non-greedy actions receive
 
-\[
-\pi_b(a\mid x)=\frac{\epsilon}{K}.
-\]
+```math
+\pi_b(a\mid x)=\frac{\epsilon}{K}
+```
 
 As epsilon shrinks, the uniform target remains formally supported while overlap
 can become extremely weak.
@@ -75,15 +75,15 @@ can become extremely weak.
 
 The scientific mechanism is:
 
-\[
+```math
 \text{policy choice}
 \rightarrow
 \text{which actions are observed}
 \rightarrow
 \text{which rewards are learned well}
 \rightarrow
-\text{next policy}.
-\]
+\text{next policy}
+```
 
 Early random estimation errors can therefore affect later exposure.
 
@@ -127,13 +127,13 @@ experiment.
 
 v1.0 extends that idea dynamically:
 
-\[
+```math
 \text{exploration today}
 \rightarrow
 \text{training data tomorrow}
 \rightarrow
-\text{future policy behavior}.
-\]
+\text{future policy behavior}
+```
 
 v0.9 also remains relevant: if policies are repeatedly selected using noisy
 offline estimates, selection bias can interact with this feedback loop.

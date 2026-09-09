@@ -18,19 +18,19 @@ bias-variance tradeoffs under the same controlled logging process.
 
 For threshold \(c > 0\),
 
-\[
-\tilde w_i = \min(w_i, c),
-\]
+```math
+\tilde w_i = \min(w_i, c)
+```
 
 and
 
-\[
+```math
 \hat V_{\mathrm{CIPS}}
 =
-\frac1n
+\frac{1}{n}
 \sum_i
-\tilde w_i r_i.
-\]
+\tilde w_i r_i
+```
 
 Clipping limits the influence of extreme weights and can substantially reduce
 variance.
@@ -44,12 +44,15 @@ The threshold is therefore an explicit tuning choice, not a free correction.
 
 SNIPS normalizes by the observed total importance weight:
 
-\[
+```math
 \hat V_{\mathrm{SNIPS}}
 =
-\frac{\sum_i w_i r_i}
-     {\sum_i w_i}.
-\]
+\frac{
+\sum_i w_i r_i
+}{
+\sum_i w_i
+}
+```
 
 SNIPS is generally finite-sample biased. Under suitable conditions it can be
 consistent and may reduce variance relative to ordinary IPS.
@@ -86,43 +89,43 @@ repeated-sample behavior.
 
 The central quantities are
 
-\[
+```math
 \mathrm{Bias}(\hat V)
 =
-\mathbb E[\hat V] - V,
-\]
+\mathbb E[\hat V] - V
+```
 
-\[
+```math
 \mathrm{Var}(\hat V)
 =
-\mathbb E[(\hat V-\mathbb E[\hat V])^2],
-\]
+\mathbb E[(\hat V-\mathbb E[\hat V])^2]
+```
 
 and
 
-\[
+```math
 \mathrm{RMSE}(\hat V)
 =
-\sqrt{\mathbb E[(\hat V-V)^2]}.
-\]
+\sqrt{\mathbb E[(\hat V-V)^2]}
+```
 
 ## Scientific message
 
 v0.4 showed:
 
-\[
+```math
 \text{identified}
 \not\Rightarrow
-\text{well estimated}.
-\]
+\text{well estimated}
+```
 
 v0.5 adds:
 
-\[
+```math
 \text{variance reduction}
 \not\Rightarrow
-\text{unbiasedness}.
-\]
+\text{unbiasedness}
+```
 
 Clipping and self-normalization are estimator choices with measurable
 tradeoffs, not generic fixes for weak overlap.

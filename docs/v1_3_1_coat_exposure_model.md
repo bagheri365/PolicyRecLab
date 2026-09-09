@@ -13,26 +13,26 @@ self-selection process without using the randomized ratings to fit that model.
 
 The observational Coat matrix induces a binary user-item observation matrix
 
-\[
+```math
 O_{ui} =
 \begin{cases}
 1 & \text{if user }u\text{ self-selected and rated item }i,\\
-0 & \text{otherwise.}
+0 & \text{otherwise}
 \end{cases}
-\]
+```
 
 We model
 
-\[
+```math
 P(O_{ui}=1)
 =
-\sigma(
+\sigma\left(
 \alpha
 +b_u
 +c_i
 +p_u^\top q_i
-).
-\]
+\right)
+```
 
 This is a regularized logistic matrix-factorization exposure model.
 
@@ -58,12 +58,15 @@ The randomized Coat ratings are never used to fit the exposure model.
 For observed ratings, v1.3.1 uses the self-normalized inverse-observation
 weighted mean
 
-\[
+```math
 \widehat\mu_{\mathrm{IPW}}
 =
-\frac{\sum_{(u,i):O_{ui}=1} R_{ui}/\widehat p_{ui}}
-     {\sum_{(u,i):O_{ui}=1} 1/\widehat p_{ui}}.
-\]
+\frac{
+\sum_{(u,i):O_{ui}=1} R_{ui}/\widehat p_{ui}
+}{
+\sum_{(u,i):O_{ui}=1} 1/\widehat p_{ui}
+}
+```
 
 The comparison reports:
 

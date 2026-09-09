@@ -25,11 +25,11 @@ v1.1 keeps three questions separate.
 
 For IPS, contextual support requires
 
-\[
+```math
 \pi_e(a\mid x)>0
 \Rightarrow
-\pi_b(a\mid x)>0.
-\]
+\pi_b(a\mid x)>0
+```
 
 If support fails, the report marks the target as not nonparametrically
 identified and refuses to present a finite IPS value as though it were valid.

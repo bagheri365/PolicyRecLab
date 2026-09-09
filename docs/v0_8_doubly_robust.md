@@ -7,30 +7,33 @@ method's sensitivity to reward-model misspecification?
 
 For one-step contextual bandits, PolicyRecLab implements
 
-\[
+```math
 \hat V_{\mathrm{DR}}
 =
-\frac1n
+\frac{1}{n}
 \sum_i
 \left[
 \hat r(x_i,\pi_e)
 +
-\frac{\pi_e(a_i\mid x_i)}
-     {\pi_b(a_i\mid x_i)}
+\frac{
+\pi_e(a_i\mid x_i)
+}{
+\pi_b(a_i\mid x_i)
+}
 \left(
 r_i-\hat r(x_i,a_i)
 \right)
-\right],
-\]
+\right]
+```
 
 where
 
-\[
+```math
 \hat r(x,\pi_e)
 =
 \sum_a
-\pi_e(a\mid x)\hat r(x,a).
-\]
+\pi_e(a\mid x)\hat r(x,a)
+```
 
 The first term is the reward-model prediction under the target policy. The
 second uses importance weighting to correct model residuals on logged actions.
@@ -100,13 +103,13 @@ Reported metrics are:
 
 The misspecified-DM comparison illustrates the robustness benefit:
 
-\[
+```math
 \text{wrong reward model}
 +
 \text{correct propensities}
 \;\Longrightarrow\;
-\text{DR can still be valid}.
-\]
+\text{DR can still be valid}
+```
 
 This statement requires the baseline assumptions, including contextual support
 and valid behavior propensities.
@@ -114,9 +117,9 @@ and valid behavior propensities.
 It does not mean DR is immune to weak overlap. Its correction term still
 contains
 
-\[
-\frac{\pi_e(a\mid x)}{\pi_b(a\mid x)},
-\]
+```math
+\frac{\pi_e(a\mid x)}{\pi_b(a\mid x)}
+```
 
 so poor overlap can still produce high variance.
 

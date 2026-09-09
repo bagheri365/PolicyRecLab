@@ -51,23 +51,23 @@ observational data alone learning the missingness mechanism.
 
 With
 
-\[
+```math
 \hat p_r =
 \frac{\hat P(Y=r\mid O=1)\hat P(O=1)}
-{\hat P_{\mathrm{cal}}(Y=r)},
-\]
+{\hat P_{\mathrm{cal}}(Y=r)}
+```
 
 self-normalized inverse weighting reconstructs the rating distribution
 estimated from the randomized calibration subset. Without smoothing or active
 clipping,
 
-\[
+```math
 \hat\mu_{\mathrm{NB-IPW}}
 =
 \sum_r r\,\hat P_{\mathrm{cal}}(Y=r)
 =
-\hat\mu_{\mathrm{cal}}.
-\]
+\hat\mu_{\mathrm{cal}}
+```
 
 In the real Yahoo run, the calibration mean is 1.80852 and the Naive-Bayes
 weighted mean is 1.81072, a difference of only 0.00220. The scientific test is
@@ -110,10 +110,13 @@ distinction between 5% and 10% calibration.
 
 The median bias moves toward zero as calibration size grows:
 
-\[
-0.0279 \rightarrow 0.0125 \rightarrow 0.0078
-\rightarrow 0.0026 \rightarrow -0.0005.
-\]
+```math
+0.0279
+\rightarrow 0.0125
+\rightarrow 0.0078
+\rightarrow 0.0026
+\rightarrow -0.0005
+```
 
 ## Retained conclusion
 

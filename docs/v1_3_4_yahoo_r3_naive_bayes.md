@@ -42,15 +42,15 @@ derived/sample file rather than the complete observational rating log.
 Following Schnabel et al. (2016), assume observation depends on the latent
 rating category and tie parameters across users/items:
 
-\[
+```math
 P(O=1 \mid Y=r)
 =
 \frac{
 P(Y=r \mid O=1) P(O=1)
 }{
 P(Y=r)
-}.
-\]
+}
+```
 
 The terms are estimated as follows:
 
@@ -114,23 +114,23 @@ the 95% randomized reference.
 This benchmark has an important algebraic property. With the rating-only
 Naive-Bayes propensity
 
-\[
+```math
 \hat p_r =
 \frac{\hat P(Y=r\mid O=1)\hat P(O=1)}
-{\hat P_{\mathrm{cal}}(Y=r)},
-\]
+{\hat P_{\mathrm{cal}}(Y=r)}
+```
 
 self-normalized inverse weighting of the observational ratings reconstructs
 the randomized calibration rating distribution. Without smoothing or active
 propensity clipping,
 
-\[
+```math
 \hat\mu_{\mathrm{NB-IPW}}
 =
 \sum_r r\,\hat P_{\mathrm{cal}}(Y=r)
 =
-\hat\mu_{\mathrm{cal}}.
-\]
+\hat\mu_{\mathrm{cal}}
+```
 
 Therefore, near agreement between the Naive-Bayes weighted mean and the
 held-out randomized evaluation mean should not be described as the

@@ -14,39 +14,42 @@ The target policy is uniform.
 
 The behavior policy is epsilon-greedy:
 
-\[
+```math
 \pi_b(a \mid x)
 =
 (1-\epsilon)\mathbf{1}\{a=a^*(x)\}
 +
-\frac{\epsilon}{|\mathcal A|}.
-\]
+\frac{\epsilon}{|\mathcal A|}
+```
 
 For every `epsilon > 0`, every action has positive behavior probability, so the
 uniform target remains supported.
 
 For non-greedy actions,
 
-\[
-\pi_b(a \mid x)=\frac{\epsilon}{|\mathcal A|}.
-\]
+```math
+\pi_b(a \mid x)=\frac{\epsilon}{|\mathcal A|}
+```
 
 Under the uniform target,
 
-\[
-\pi_e(a \mid x)=\frac1{|\mathcal A|},
-\]
+```math
+\pi_e(a \mid x)=\frac{1}{|\mathcal A|}
+```
 
 so their importance weights are
 
-\[
+```math
 w
 =
-\frac{1/|\mathcal A|}
-     {\epsilon/|\mathcal A|}
+\frac{
+1/|\mathcal A|
+}{
+\epsilon/|\mathcal A|
+}
 =
-\frac1\epsilon.
-\]
+\frac{1}{\epsilon}
+```
 
 As epsilon shrinks, these observations become rarer but much more influential.
 
@@ -73,12 +76,15 @@ This separates identification from estimator stability.
 
 The project reports the common importance-weight heuristic
 
-\[
-\widehat{ESS}
+```math
+\widehat{\mathrm{ESS}}
 =
-\frac{(\sum_i w_i)^2}
-     {\sum_i w_i^2}.
-\]
+\frac{
+\left(\sum_i w_i\right)^2
+}{
+\sum_i w_i^2
+}
+```
 
 This quantity is useful for describing weight concentration. It is **not** a
 literal inferential sample size, a confidence-interval guarantee, or proof that
@@ -98,11 +104,11 @@ When epsilon becomes small:
 
 The key lesson is
 
-\[
+```math
 \text{identified}
 \not\Rightarrow
-\text{well estimated}.
-\]
+\text{well estimated}
+```
 
 This is different from v0.2. There, exact zero support made the target value
 unidentified. Here, propensities remain positive but estimation becomes fragile.

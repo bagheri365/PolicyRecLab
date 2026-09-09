@@ -13,45 +13,45 @@ bias: selection optimism.
 
 Suppose candidate policies
 
-\[
+```math
 \pi_1,\ldots,\pi_M
-\]
+```
 
 are fixed before the evaluation data are observed.
 
 For each fixed policy, an OPE estimator may satisfy
 
-\[
+```math
 \mathbb E[\hat V(\pi_j)] = V(\pi_j)
-\]
+```
 
 under its assumptions.
 
 But if we select
 
-\[
+```math
 \hat j
 =
 \arg\max_j \hat V(\pi_j)
-\]
+```
 
 and then report
 
-\[
+```math
 \hat V(\pi_{\hat j})
-\]
+```
 
 using the same sample, the reported value has been selected partly because its
 estimation error was favorable.
 
 In general,
 
-\[
-\mathbb E[
+```math
+\mathbb E\left[
 \hat V(\pi_{\hat j}) - V(\pi_{\hat j})
-]
+\right]
 > 0
-\]
+```
 
 can occur even though each candidate's estimator is unbiased before selection.
 
@@ -92,19 +92,19 @@ For each candidate-pool size, v0.9 reports:
 
 Selection optimism is
 
-\[
+```math
 \hat V_{\text{selection}}(\pi_{\hat j})
 -
-V(\pi_{\hat j}).
-\]
+V(\pi_{\hat j})
+```
 
 Holdout error is
 
-\[
+```math
 \hat V_{\text{holdout}}(\pi_{\hat j})
 -
-V(\pi_{\hat j}).
-\]
+V(\pi_{\hat j})
+```
 
 ## Why the fresh holdout works
 

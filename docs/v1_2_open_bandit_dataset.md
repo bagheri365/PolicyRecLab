@@ -24,17 +24,17 @@ policies were actually deployed.
 
 For v1.2 we use:
 
-\[
+```math
 \text{BTS logs}
 \rightarrow
 \widehat V_{\mathrm{IPS}}(\pi_{\mathrm{Random}})
-\]
+```
 
 and compare that estimate with:
 
-\[
-\text{empirical CTR from the separately collected Random logs}.
-\]
+```math
+\text{empirical CTR from the separately collected Random logs}
+```
 
 The Random CTR is an **on-policy empirical reference**.
 
@@ -44,9 +44,9 @@ It is not exact counterfactual ground truth.
 
 Uniform Random has a simple known evaluation probability at each position:
 
-\[
-\pi_{\mathrm{Random}}(a\mid x,\ell)=1/K,
-\]
+```math
+\pi_{\mathrm{Random}}(a\mid x,\ell)=\frac{1}{K}
+```
 
 where \(K\) is the number of available item actions for the campaign.
 
@@ -67,19 +67,22 @@ natural extension after this first real-data path is validated.
 
 For impression \(i\),
 
-\[
+```math
 w_i =
-\frac{\pi_e(a_i\mid x_i,\ell_i)}
-     {\pi_b(a_i\mid x_i,\ell_i)}
-\]
+\frac{
+\pi_e(a_i\mid x_i,\ell_i)
+}{
+\pi_b(a_i\mid x_i,\ell_i)
+}
+```
 
 and
 
-\[
+```math
 \widehat V_{\mathrm{IPS}}
 =
-\frac{1}{n}\sum_i w_i r_i.
-\]
+\frac{1}{n}\sum_i w_i r_i
+```
 
 v1.2 adds a logged-action IPS interface so real logs do not need to be expanded
 into a dense context-action probability matrix.
