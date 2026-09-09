@@ -23,6 +23,10 @@ from .policy_selection import (
     PolicySelectionStudy,
     run_policy_selection_study,
 )
+from .reliability_system import (
+    ReliabilitySystemStudy,
+    run_reliability_system_study,
+)
 from .support_identification import (
     SupportIdentificationResult,
     run_support_identification_experiment,
@@ -43,6 +47,7 @@ __all__ = [
     "IPSValidationResult",
     "PolicySelectionPoint",
     "PolicySelectionStudy",
+    "ReliabilitySystemStudy",
     "SupportIdentificationResult",
     "TradeoffPoint",
     "WeakOverlapPoint",
@@ -55,6 +60,7 @@ __all__ = [
     "run_feedback_loop_comparison",
     "run_ips_validation_experiment",
     "run_policy_selection_study",
+    "run_reliability_system_study",
     "run_support_identification_experiment",
     "run_weak_overlap_study",
 ]
