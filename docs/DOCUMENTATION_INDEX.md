@@ -8,11 +8,10 @@ issue is discovered.
 
 1. [`../README.md`](../README.md) — project overview and headline findings.
 2. [`DOCUMENTATION_INDEX.md`](DOCUMENTATION_INDEX.md) — map of the research record.
-3. `FINAL_REPORT.md` — reserved for the D2 final research narrative.
+3. [`FINAL_REPORT.md`](FINAL_REPORT.md) — final paper-style research narrative.
 4. `REPRODUCIBILITY.md` — reserved for the D3 fresh-clone and data-reproduction guide.
 
-The final report and reproducibility guide are intentionally not created in D1.
-D1 establishes the structure and audits the existing record first.
+The final research report is complete in D2. The fresh-clone reproducibility guide remains a D3 task.
 
 ## Research progression
 
@@ -92,12 +91,12 @@ result. Its stable weights and high ESS did not imply successful debiasing.
 - preserve interpretation boundaries;
 - identify release-blocking documentation gaps.
 
-### D2 — final research narrative
+### D2 — final research narrative — complete
 
-- make the README a concise project entry point;
-- add `docs/FINAL_REPORT.md`;
-- synthesize the simulator, OBD, Coat, and Yahoo evidence;
-- keep retained, rejected, and caveated results explicit.
+- README rewritten as the project entry point;
+- `docs/FINAL_REPORT.md` added;
+- simulator, OBD, Coat, and Yahoo evidence synthesized;
+- retained, rejected, and caveated results kept explicit.
 
 ### D3 — reproducibility and release audit
 
