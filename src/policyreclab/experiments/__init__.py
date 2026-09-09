@@ -3,6 +3,7 @@ from .direct_method import (
     DirectMethodStudy,
     run_direct_method_study,
 )
+from .doubly_robust import DRMetrics, DoublyRobustStudy, run_doubly_robust_study
 from .estimator_tradeoffs import (
     EstimatorMetrics,
     EstimatorTradeoffStudy,
@@ -23,8 +24,10 @@ from .support_identification import (
 from .weak_overlap import WeakOverlapPoint, WeakOverlapStudy, run_weak_overlap_study
 
 __all__ = [
+    "DRMetrics",
     "DirectMethodMetrics",
     "DirectMethodStudy",
+    "DoublyRobustStudy",
     "EstimatorMetrics",
     "EstimatorTradeoffStudy",
     "ExplorationTradeoffPoint",
@@ -36,6 +39,7 @@ __all__ = [
     "WeakOverlapPoint",
     "WeakOverlapStudy",
     "run_direct_method_study",
+    "run_doubly_robust_study",
     "run_estimator_tradeoff_study",
     "run_exploration_tradeoff_study",
     "run_exposure_bias_experiment",
